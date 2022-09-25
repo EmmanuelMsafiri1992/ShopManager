@@ -1,5 +1,5 @@
 <?php
-
+namespace Database\Seeders;
 use App\Models\GeneralSetting;
 use Illuminate\Database\Seeder;
 
