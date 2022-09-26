@@ -29,118 +29,12 @@
                         <p>{{ __('Dashboard') }}</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href=" "
-                        class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>{{ __('Staff') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link">
-                        <i class="nav-icon fas fa-people-carry"></i>
-                        <p>{{ __('Suppliers') }}</p>
-                    </a>
-                </li>
                 @if (auth()->user()->isAdmin())
-                    <li class="nav-item">
-                        <a href="{{ route('users.index') }}"
-                            class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-users-cog"></i>
-                            <p>{{ __('Users') }}</p>
-                        </a>
-                    </li>
-                @endif
-                <li class="nav-header text-bold">{{ __('EXPENSE') }}</li>
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link">
-                        <i class="nav-icon fas fa-list-alt"></i>
-                        <p>{{ __('Categories') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=""
-                        class="">
-                        <i class="nav-icon fas fa-wallet"></i>
-                        <p>{{ __('Expenses') }}</p>
-                    </a>
-                </li>
-
-                <li class="nav-header text-bold">{{ __('PURCHASE') }}</li>
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link">
-                        <i class="nav-icon fas fa-shopping-basket"></i>
-                        <p>{{ __('Purchases') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=""
-                        class="">
-                        <i class="nav-icon fas fa-undo-alt"></i>
-                        <p>{{ __('Return Purchases') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=""            class="nav-link ">
-                        <i class="nav-icon fas fa-trash-alt"></i>
-                        <p>{{ __('Damage Purchases') }}</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link {{ request()->is('admin/purchase-inventory*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-boxes"></i>
-                        <p>{{ __('Purchase Inventory') }}</p>
-                    </a>
-                </li>
-
-                <li class="nav-header text-bold">{{ __('PRODUCT') }}</li>
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link {{ request()->is('admin/categories*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tags"></i>
-                        <p>{{ __('Categories') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link {{ request()->is('admin/sub-categories*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-code-branch"></i>
-                        <p>{{ __('Sub Categories') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link {{ request()->is('admin/processing-products*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-tools"></i>
-                        <p>{{ __('Processing') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link {{ request()->is('admin/finished-products*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-th-list"></i>
-                        <p>{{ __('Finished') }}</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href=""
-                        class="nav-link {{ request()->is('admin/transferred-products*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-random"></i>
-                        <p>{{ __('Transferred') }}</p>
-                    </a>
-                </li>
-                <li class="nav-header text-bold">{{ __('REPORT') }}</li>
-                <li
-                    class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-chart-bar"></i>
                         <p>
-                            {{ __('Product') }}
+                            {{ __('Users') }}
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -149,25 +43,220 @@
                             <a href=""
                                 class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tools"></i>
-                                <p>{{ __('Processing') }}</p>
+                                <p>{{ __('View Users') }}</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href=""
                                 class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th-list"></i>
-                                <p>{{ __('Finished') }}</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=""
-                                class="nav-link {{ request()->is('admin/transferred-report') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-random"></i>
-                                <p>{{ __('Transferred') }}</p>
+                                <p>{{ __('Add User') }}</p>
                             </a>
                         </li>
                     </ul>
                 </li>
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            {{ __('Roles') }}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tools"></i>
+                                <p>{{ __('View Roles') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>{{ __('Add Role') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            {{ __('Wholesellers') }}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tools"></i>
+                                <p>{{ __('View Wholesellers') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>{{ __('Add Wholeseller') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li> 
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            {{ __('Retailers') }}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tools"></i>
+                                <p>{{ __('View Retailers') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>{{ __('Add Retailer') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            {{ __('Shops') }}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tools"></i>
+                                <p>{{ __('View Shops') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>{{ __('Add Shop') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            {{ __('Shopkeeper') }}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tools"></i>
+                                <p>{{ __('View Shopkeepers') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>{{ __('Add Shopkeeper') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            {{ __('Products') }}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tools"></i>
+                                <p>{{ __('View Products') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>{{ __('Add Product') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            {{ __('Customers') }}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tools"></i>
+                                <p>{{ __('View Customers') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>{{ __('Add Customer') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-chart-bar"></i>
+                        <p>
+                            {{ __('Sale') }}
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ">
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-tools"></i>
+                                <p>{{ __('View Sale') }}</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href=""
+                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-th-list"></i>
+                                <p>{{ __('Add Sale') }}</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+
                 <li class="nav-header text-bold">{{ __('ACCOUNT') }}</li>
                 <li class="nav-item">
                     <a href=""
