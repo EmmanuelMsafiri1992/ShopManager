@@ -98,6 +98,9 @@
                                 <select class="form-control" id="accountType" name="accountType">
                                     <option value="0" {{ $user->isAdmin() ? '' : 'selected' }}>{{ __('General User') }}</option>
                                     <option value="1" {{ $user->isAdmin() ? 'selected' : '' }}>{{ __('Admin') }}</option>
+                                    <option value="2" {{ $user->isAdmin() ? 'selected' : '' }}>{{ __('WholeSaler') }}</option>
+                                    <option value="3" {{ $user->isAdmin() ? 'selected' : '' }}>{{ __('Retailer') }}</option>
+                                    <option value="4" {{ $user->isAdmin() ? 'selected' : '' }}>{{ __('Shop keeper') }}</option>
                                 </select>
                             </div>
                             <div class="col-md-4 form-group">

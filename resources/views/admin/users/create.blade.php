@@ -95,6 +95,10 @@
                                 <select class="form-control" id="accountType" name="accountType">
                                     <option value="0">{{ __('General User') }}</option>
                                     <option value="1">{{ __('Admin') }}</option>
+                                    <option value="1">{{ __('Supplier') }}</option>
+                                    <option value="1">{{ __('WholeSaler') }}</option>
+                                    <option value="1">{{ __('Retailer') }}</option>
+                                    <option value="1">{{ __('Shop keeper') }}</option>
                                 </select>
                             </div>
                             <div class="col-md-4 form-group">
