@@ -53018,7 +53018,7 @@ a.text-muted:hover {
  */
 :root {
   --bs-blue: #3b82f6;
-  --bs-indigo: hsl(111deg 89% 15% / 86%);
+  --bs-indigo: hsla(111deg, 89%, 15%, 0.86);
   --bs-purple: #a855f7;
   --bs-pink: #ec4899;
   --bs-red: #ef4444;
@@ -55241,8 +55241,7 @@ textarea.form-control-lg {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 .form-check-input[type=checkbox] {
   border-radius: 0.25em;
@@ -74089,7 +74088,7 @@ body {
 }
 
 a {
-  color: hsl(111deg 89% 15% / 86%);
+  color: hsla(111deg, 89%, 15%, 0.86);
 }
 
 .custom-sidebar:hover {
@@ -74122,7 +74121,7 @@ a {
 }
 
 .toggle-icon svg {
-  color: hsl(111deg 89% 15% / 86%);
+  color: hsla(111deg, 89%, 15%, 0.86);
   width: 30px;
   height: 28px;
 }
@@ -74187,12 +74186,12 @@ a {
 [class*=sidebar-dark-] .nav-sidebar > .nav-item.menu-open > .nav-link,
 [class*=sidebar-dark-] .nav-sidebar > .nav-item:hover > .nav-link,
 [class*=sidebar-dark-] .nav-sidebar > .nav-item > .nav-link:focus {
-  color: hsl(111deg 89% 15% / 86%);
+  color: hsla(111deg, 89%, 15%, 0.86);
 }
 
 .nav-sidebar > .nav-item:hover > .nav-link.active,
 .nav-sidebar > .nav-item > .nav-link.active {
-  background-color: hsl(111deg 89% 15% / 86%) !important;
+  background-color: hsla(111deg, 89%, 15%, 0.86) !important;
   color: #ffffff;
 }
 
@@ -74202,34 +74201,34 @@ a {
 
 .btn-primary {
   color: #fff;
-  background-color: hsl(111deg 89% 15% / 86%);
-  border-color: hsl(111deg 89% 15% / 86%);
+  background-color: hsla(111deg, 89%, 15%, 0.86);
+  border-color: hsla(111deg, 89%, 15%, 0.86);
 }
 
 .badge-success {
-  color: hsl(111deg 89% 15% / 86%);
-  background-color: rgba(99, 102, 241, 0.2196078431);
+  color: hsla(111deg, 89%, 15%, 0.86);
+  background-color: hsla(111deg, 89%, 15%, 0.86) 38;
 }
 
 .action-dropdown-toggle {
   background: transparent;
-  border: 1px solid hsl(111deg 89% 15% / 86%);
+  border: 1px solid hsla(111deg, 89%, 15%, 0.86);
   border-radius: 100%;
   width: 35px;
   height: 35px;
-  color: hsl(111deg 89% 15% / 86%);
+  color: hsla(111deg, 89%, 15%, 0.86);
   padding: 0;
 }
 
 .action-dropdown-toggle:focus,
 .action-dropdown-toggle:hover {
   color: #fff;
-  background-color: hsl(111deg 89% 15% / 86%) !important;
-  border-color: hsl(111deg 89% 15% / 86%) !important;
+  background-color: hsla(111deg, 89%, 15%, 0.86) !important;
+  border-color: hsla(111deg, 89%, 15%, 0.86) !important;
 }
 
 .dropdown-menu {
-  border-color: rgba(99, 102, 241, 0.1803921569);
+  border-color: hsla(111deg, 89%, 15%, 0.86) 2e;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -74237,7 +74236,7 @@ a {
 
 .dropdown-menu a {
   padding: 13px 20px;
-  border-bottom: 1px solid rgba(99, 102, 241, 0.1803921569);
+  border-bottom: 1px solid hsla(111deg, 89%, 15%, 0.86) 2e;
 }
 
 .dropdown-menu a:last-child {
@@ -74247,7 +74246,7 @@ a {
 .dropdown-item.active, .dropdown-item:active {
   color: #fff;
   text-decoration: none;
-  background-color: hsl(111deg 89% 15% / 86%);
+  background-color: hsla(111deg, 89%, 15%, 0.86);
 }
 
 .nav-item.has-treeview.menu-open,
@@ -74270,7 +74269,7 @@ a {
 
 .nav-item.has-treeview.menu-open > .nav-link,
 .menu-is-opening.menu-open > .nav-link {
-  background: hsl(111deg 89% 15% / 86%) !important;
+  background: hsla(111deg, 89%, 15%, 0.86) !important;
   color: #fff !important;
 }
 
@@ -74374,10 +74373,10 @@ a {
 }
 
 .card-header > .card-tools a {
-  color: hsl(111deg 89% 15% / 86%) !important;
-  background: rgba(99, 102, 241, 0.1215686275) !important;
+  color: hsla(111deg, 89%, 15%, 0.86) !important;
+  background: hsla(111deg, 89%, 15%, 0.86) 1f !important;
   font-weight: bold !important;
-  border-color: rgba(99, 102, 241, 0.1215686275) !important;
+  border-color: hsla(111deg, 89%, 15%, 0.86) 1f !important;
 }
 
 .content-wrapper > .content,
@@ -74393,8 +74392,8 @@ a {
 }
 
 .card-success:not(.card-outline) > .card-header {
-  background-color: rgba(99, 102, 241, 0.3215686275) !important;
-  color: hsl(111deg 89% 15% / 86%);
+  background-color: hsla(111deg, 89%, 15%, 0.86) 52 !important;
+  color: hsla(111deg, 89%, 15%, 0.86);
 }
 
 a.nav-link.toggle-icon {
@@ -74415,8 +74414,8 @@ a.nav-link.toggle-icon {
 }
 
 .page-item.active .page-link {
-  background-color: hsl(111deg 89% 15% / 86%);
-  border-color: hsl(111deg 89% 15% / 86%);
+  background-color: hsla(111deg, 89%, 15%, 0.86);
+  border-color: hsla(111deg, 89%, 15%, 0.86);
 }
 
 .data_empty {
@@ -74436,11 +74435,11 @@ a.nav-link.toggle-icon {
 }
 
 .data_empty a {
-  background: rgba(99, 102, 241, 0.3019607843);
-  color: hsl(111deg 89% 15% / 86%);
+  background: hsla(111deg, 89%, 15%, 0.86) 4d;
+  color: hsla(111deg, 89%, 15%, 0.86);
   font-weight: 600;
   padding: 10px 20px;
-  border-color: rgba(99, 102, 241, 0.3803921569);
+  border-color: hsla(111deg, 89%, 15%, 0.86) 61;
 }
 
 .user-profile {
@@ -74458,7 +74457,7 @@ a.nav-link.toggle-icon {
 
 .arrow-down {
   margin-left: 6px;
-  color: hsl(111deg 89% 15% / 86%);
+  color: hsla(111deg, 89%, 15%, 0.86);
   line-height: 38px;
 }
 
@@ -74543,8 +74542,8 @@ a.nav-link.toggle-icon {
 }
 
 .btn-success {
-  background-color: hsl(111deg 89% 15% / 86%) !important;
-  border-color: hsl(111deg 89% 15% / 86%) !important;
+  background-color: hsla(111deg, 89%, 15%, 0.86) !important;
+  border-color: hsla(111deg, 89%, 15%, 0.86) !important;
   box-shadow: none;
 }
 
@@ -74559,8 +74558,8 @@ a.nav-link.toggle-icon {
 
 .dark-mode .btn-primary {
   color: #fff;
-  background-color: hsl(111deg 89% 15% / 86%);
-  border-color: hsl(111deg 89% 15% / 86%);
+  background-color: hsla(111deg, 89%, 15%, 0.86);
+  border-color: hsla(111deg, 89%, 15%, 0.86);
 }
 
 .dark-mode .form-control:not(.form-control-navbar):not(.form-control-sidebar), .dark-mode .custom-select, .dark-mode .custom-file-label, .dark-mode .custom-file-label::after, .dark-mode .custom-control-label::before, .dark-mode .input-group-text {
@@ -74593,7 +74592,7 @@ a.nav-link.toggle-icon {
 }
 
 .bg-success {
-  background-color: hsl(111deg 89% 15% / 86%) !important;
+  background-color: hsla(111deg, 89%, 15%, 0.86) !important;
 }
 
 .dark-mode .info-box {
@@ -74601,7 +74600,7 @@ a.nav-link.toggle-icon {
 }
 
 .dark-mode .card-success:not(.card-outline) > .card-header {
-  background-color: hsl(111deg 89% 15% / 86%) !important;
+  background-color: hsla(111deg, 89%, 15%, 0.86) !important;
   color: #fff !important;
 }
 
@@ -74621,8 +74620,8 @@ a.nav-link.toggle-icon {
 }
 
 .dark-mode .page-item.active .page-link {
-  background-color: hsl(111deg 89% 15% / 86%);
-  border-color: hsl(111deg 89% 15% / 86%);
+  background-color: hsla(111deg, 89%, 15%, 0.86);
+  border-color: hsla(111deg, 89%, 15%, 0.86);
   color: #fff;
 }
 
@@ -74632,12 +74631,12 @@ a.nav-link.toggle-icon {
 }
 
 .dark-mode .page-item .page-link {
-  color: hsl(111deg 89% 15% / 86%);
+  color: hsla(111deg, 89%, 15%, 0.86);
 }
 
 .dark-mode .alert-primary {
   color: #ffffff;
-  background-color: rgba(99, 102, 241, 0.3607843137);
-  border-color: hsl(111deg 89% 15% / 86%);
+  background-color: hsla(111deg, 89%, 15%, 0.86) 5c;
+  border-color: hsla(111deg, 89%, 15%, 0.86);
   font-weight: 700;
 }

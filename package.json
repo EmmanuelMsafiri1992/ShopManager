@@ -24,13 +24,15 @@
         "sass": "^1.32.11",
         "sass-loader": "^13.0.2",
         "vite": "^3.0.0",
-        "vue": "^3.2.39",
-        "vue-loader": "^16.2.0",
+        "vue": "^3.2.36",
+        "vue-loader": "^17.0.0",
         "webpack": "^5.74.0"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^6.2.0",
+        "@vitejs/plugin-vue": "^3.1.0",
         "admin-lte": "3.2",
+        "autoprefixer": "10.4.5",
         "jquery": "^3.6.1",
         "popper.js": "^1.16.1",
         "vue-template-compiler": "^2.7.10"
