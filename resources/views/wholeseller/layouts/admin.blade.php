@@ -36,11 +36,11 @@
       >
     <div class="wrapper" id="app">
         <!-- Navbar -->
-        @include('admin.components.top_nav')
+        @include('wholeseller.components.top_nav')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        @include('admin.components.side_nav')
+        @include('wholeseller.components.side_nav')
         <!-- /.Main Sidebar Container -->
 
         <!-- page content -->

@@ -6,11 +6,7 @@ use Validator;
 
 class WholesellerController extends Controller
 {
-public function dashboard()
-{
-return view('wholeseller.dashboard.dashboard');
-}
-    // For login admin
+// For login admin
 public function authenticate(Request $request)
 {
 $request->validate([
@@ -19,7 +15,7 @@ $request->validate([
 ]);
 if(Auth::guard('wholeseller')->attempt(['email'=>$request->email,'password'=>$request->password],$request->get('remember')))
 {
-return redirect()->route('wholeseller.dashboard.dashboard');
+return redirect()->route('wholeseller.dashboard');
 }
 else
 {

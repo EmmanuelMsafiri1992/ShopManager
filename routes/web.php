@@ -29,7 +29,7 @@ Route::get('/', function() {
 //admin auth
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
    //Admin Routes
     Route::group(['prefix' => 'admin',  'middleware' => ['auth']], function () {
         // Users routes
@@ -74,8 +74,9 @@ Route::group(['prefix' => 'wholeseller'], function() {
 	});
 	
 	Route::group(['middleware' => 'wholeseller.auth'], function(){
-    Route::get('/dashboard',[WholesellerController::class, 'dashboard'])->name('wholeseller.dashboard');
-    Route::post('/logout',[WholesellerController::class,'logout'])->name('wholeseller.logout');
+  //  Route::get('/dashboard',[WholesellerController::class, 'dashboard'])->name('wholeseller.dashboard');
+  Route::view('/dashboard','wholeseller.dashboard.dashboard')->name('wholeseller.dashboard');
+  Route::post('/logout',[WholesellerController::class,'logout'])->name('wholeseller.logout');
 });
 });
 

@@ -16,5 +16,12 @@ protected $hidden = [
 protected $casts = [
 'email_verified_at' => 'datetime',
 ];
+public function profilePic()
+{
+    if (!empty($this->profile_picture)) {
+        return asset('img/profile/' . $this->profile_picture);
+    }
+    return asset('img/boy.png');
+}
 
 }

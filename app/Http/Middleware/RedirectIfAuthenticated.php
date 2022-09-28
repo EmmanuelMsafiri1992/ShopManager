@@ -19,14 +19,11 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
-            }
-        }
-
-        return $next($request);
-    }
+        // If wholeseller is authenticated then redirect him to wholeseller dashboard
+        if (Auth::guard('wholeseller')->check()) {
+            return redirect()->route('wholeseller.dashboard');
+             }
+ 
+         return $next($request);
+     }
 }
