@@ -5,6 +5,8 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ThemeSettingsContoller;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WholesellerController;
+use App\Models\Wholeseller;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +65,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
         
     });
+
+// Route for wholesellers
+Route::group(['prefix' => 'wholeseller'], function() {
+	Route::group(['middleware' => 'wholeseller.guest'], function(){
+		Route::view('/login','wholeseller.auth.login')->name('wholeseller.login');
+		Route::post('/login',[WholesellerController::class, 'authenticate'])->name('wholeseller.auth');
+	});
+	
+	Route::group(['middleware' => 'wholeseller.auth'], function(){
+    Route::get('/dashboard',[WholesellerController::class, 'dashboard'])->name('wholeseller.dashboard');
+    Route::post('/logout',[WholesellerController::class,'logout'])->name('wholeseller.logout');
+});
+});
+
+

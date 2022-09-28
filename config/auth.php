@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'wholeseller' => [
+            'driver' => 'session',
+            'provider' => 'wholesellers',
+        ],
     ],
 
     /*
@@ -63,6 +67,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'wholesellers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Wholeseller::class,
         ],
 
         // 'users' => [
@@ -89,6 +97,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ], 
+       'wholeseller' => [
+            'provider' => 'wholesellers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

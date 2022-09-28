@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(WholesellerSeeder::class);
+
         // seed basic data to table
         $settingElemetns = [
             'company_name' => 'Productify',
@@ -42,27 +44,7 @@ class DatabaseSeeder extends Seeder
                 'value' => $value
             ]);
             $this->call(UsersTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
-        $this->call(ExpensesTableSeeder::class);
-        $this->call(ExpenseCategoriesTableSeeder::class);
-        $this->call(FinishedProductsTableSeeder::class);
-        $this->call(GeneralSettingsTableSeeder::class);
-        $this->call(PaymentMethodsTableSeeder::class);
-        $this->call(ProcessingProductsTableSeeder::class);
-        $this->call(ProcessingProductStaffTableSeeder::class);
-        $this->call(ProcessingStepsTableSeeder::class);
-        $this->call(PurchasesTableSeeder::class);
-        $this->call(PurchaseDamagesTableSeeder::class);
-        $this->call(PurchaseProductsTableSeeder::class);
-        $this->call(PurchaseReturnsTableSeeder::class);
-        $this->call(ShowroomsTableSeeder::class);
-        $this->call(SizesTableSeeder::class);
-        $this->call(StaffTableSeeder::class);
-        $this->call(SubCategoriesTableSeeder::class);
-        $this->call(SuppliersTableSeeder::class);
-        $this->call(TransferredProductsTableSeeder::class);
-        $this->call(UnitsTableSeeder::class);
-        $this->call(UsedProductsTableSeeder::class);
+            $this->call(GeneralSettingsTableSeeder::class);
     }
     }
 }

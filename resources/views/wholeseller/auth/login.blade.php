@@ -53,9 +53,6 @@
                                     </p>
                                 </div>
                             </form>
-                            <a href="{{url('wholeseller/login')}}">
-                            Become a WholeSeller
-                            </a>
                         </div>
                     </div>
                 </div><!-- End page content -->
