@@ -40,14 +40,14 @@
                     </a>
                     <ul class="nav nav-treeview ">
                         <li class="nav-item">
-                            <a href=""
-                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-tools"></i>
+                            <a href="{{route('users.index')}}"
+                                class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-users-cog"></i>
                                 <p>{{ __('View Users') }}</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href=""
+                            <a href="{{route('users.create')}}"
                                 class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th-list"></i>
                                 <p>{{ __('Add User') }}</p>
