@@ -1,4 +1,5 @@
-@extends('wholeseller.layouts.app')
+@extends('wholeseller.layouts.admin')
+
 @section('content')
     {{--   Content Header (Page header) --}}
     <div class="content-header">
@@ -27,5 +28,6 @@
 @section('extra-script')
     {{-- ChartScript --}}
     <script src="{{ asset('js/Chart.min.js') }}" charset=utf-8></script>
+
 @endsection
 

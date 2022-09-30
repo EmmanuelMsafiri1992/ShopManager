@@ -259,12 +259,13 @@
 
                 <li class="nav-header text-bold">{{ __('ACCOUNT') }}</li>
                 <li class="nav-item">
-                    <a href=""
-                        class="nav-link {{ request()->is('admin/setup') ? 'active' : '' }} {{ request()->is('admin/general-settings') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-cogs"></i>
-                        <p>{{ __('Setup') }}</p>
-                    </a>
-                </li>
+                    <form method="post" action="{{route('logout')}}">
+                    @csrf
+                    <button type="submit" class="btn btn-warning w-100">
+                    {{ __('Log Out') }}
+                    </button>
+                    </form>
+                  </li>
                 <li class="nav-item has-treeview {{ request()->is('admin/profile') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-user"></i>

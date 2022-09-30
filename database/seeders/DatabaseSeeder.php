@@ -12,7 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(WholesellerSeeder::class);
 
         // seed basic data to table
         $settingElemetns = [
@@ -46,5 +45,7 @@ class DatabaseSeeder extends Seeder
             $this->call(UsersTableSeeder::class);
             $this->call(GeneralSettingsTableSeeder::class);
     }
+    $this->call(WholesellerSeeder::class);
+
     }
 }

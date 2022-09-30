@@ -6,7 +6,6 @@ use App\Http\Controllers\ThemeSettingsContoller;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WholesellerController;
-use App\Models\Wholeseller;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,7 +74,7 @@ Route::group(['prefix' => 'wholeseller'], function() {
 	
 	Route::group(['middleware' => 'wholeseller.auth'], function(){
   //  Route::get('/dashboard',[WholesellerController::class, 'dashboard'])->name('wholeseller.dashboard');
-  Route::view('/dashboard','wholeseller.dashboard.dashboard')->name('wholeseller.dashboard');
+  Route::get('/dashboard',[WholesellerController::class,'index'])->name('wholeseller.dashboard');
   Route::post('/logout',[WholesellerController::class,'logout'])->name('wholeseller.logout');
 });
 });
