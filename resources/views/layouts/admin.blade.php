@@ -36,7 +36,7 @@
       >
     <div class="wrapper" id="app">
         <!-- Navbar -->
-        @include('layouts.components.top_nav')
+        @include('layouts.components.topnavbar')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
@@ -57,9 +57,6 @@
 
         @elseif (Auth::guard('customer')->check())
         @include('layouts.components.sidebar_customer')
-
-        @else
-        @include('layouts.components.side_nav')
         @endif
         <!-- /.Main Sidebar Container -->
 
