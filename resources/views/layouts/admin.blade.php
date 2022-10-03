@@ -36,11 +36,31 @@
       >
     <div class="wrapper" id="app">
         <!-- Navbar -->
-        @include('admin.components.top_nav')
+        @include('layouts.components.top_nav')
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        @include('admin.components.side_nav')
+        @if(Auth::guard('superadmin')->check())
+        @include('layouts.components.sidebar_superadmin')
+
+        @elseif(Auth::guard('admin')->check())
+        @include('layouts.components.sidebar_admin')
+
+        @elseif(Auth::guard('wholeseller')->check())
+        @include('layouts.components.sidebar_wholeseller')
+
+        @elseif (Auth::guard('retailer')->check())
+        @include('layouts.components.sidebar_retailer')
+
+        @elseif (Auth::guard('shopkeeper')->check())
+        @include('layouts.components.sidebar_shopkeeper')
+
+        @elseif (Auth::guard('customer')->check())
+        @include('layouts.components.sidebar_customer')
+
+        @else
+        @include('layouts.components.side_nav')
+        @endif
         <!-- /.Main Sidebar Container -->
 
         <!-- page content -->
@@ -50,13 +70,13 @@
         <!-- /.page content-->
 
         <!-- Main Footer -->
-        @include('admin.components.footer')
+        @include('layouts.components.footer')
         <!--/. Main Footer -->
     </div>
     <!-- ./wrapper -->
 
 
-    @include('admin.components.sidebar_settings')
+    @include('layouts.components.sidebar_settings')
 
     <!-- REQUIRED SCRIPTS -->
     <script src="{{ asset('js/app.js') }} "></script>

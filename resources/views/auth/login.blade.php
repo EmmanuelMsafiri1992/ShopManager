@@ -53,8 +53,33 @@
                                     </p>
                                 </div>
                             </form>
-                            <a href="{{url('wholeseller/login')}}">
-                            Become a WholeSeller
+                            <a href="{{url('superadmin/login')}}" class="btn btn-danger">
+                            Become a Super Admin
+                            </a>
+                            <br>
+                            <br>
+                            <a href="{{url('admin/login')}}" class="btn btn-success">
+                            Become an Admin
+                            </a>
+                            <br>
+                            <br>
+                            <a href="{{url('wholeseller/login')}}" class="btn btn-warning">
+                            Become a wholeseller
+                            </a>
+                            <br>
+                            <br>
+                            <a href="{{url('retailer/login')}}" class="btn btn-danger">
+                            Become a Retailer
+                            </a>
+                            <br>
+                            <br>
+                            <a href="{{url('shopkeeper/login')}}" class="btn btn-success">
+                            Become a Shopkeeper
+                            </a>
+                            <br>
+                            <br>
+                            <a href="{{url('customer/login')}}" class="btn btn-warning">
+                            Become a Customer
                             </a>
                         </div>
                     </div>

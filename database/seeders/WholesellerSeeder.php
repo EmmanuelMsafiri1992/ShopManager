@@ -7,15 +7,14 @@ use Illuminate\Support\Facades\Hash;
 
 class WholesellerSeeder extends Seeder
 {
-
-    public function run()
-    {
-    Wholeseller::create([
-    'name'=>'Wholeseller_1',
-    'email'=>'wholeseller@gmail.com',
-    'password'=>Hash::make('admin'),
-    'profile_picture'=>'null',
-    'role'=>1,    
-    ]);
-    }
+public function run()
+{
+Wholeseller::create([
+'name'=>'Wholeseller_1',
+'email'=>'wholeseller@gmail.com',
+'password'=>Hash::make('admin'),
+'profile_picture'=>'null',
+'role'=>1,    
+]);
+}
 }

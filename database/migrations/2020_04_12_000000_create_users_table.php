@@ -30,8 +30,8 @@ class CreateUsersTable extends Migration
 
         User::create([
             'name' => 'System Admin',
-            'email' => 'superadmin@productify.com',
-            'password' => Hash::make('productify2022'),
+            'email' => 'superadmin@gmail.com',
+            'password' => Hash::make('admin'),
         ]);
     }
 

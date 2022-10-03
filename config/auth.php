@@ -40,9 +40,29 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'superadmin' => [
+            'driver' => 'session',
+            'provider' => 'superadmins',
+        ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
         'wholeseller' => [
             'driver' => 'session',
             'provider' => 'wholesellers',
+        ],
+        'retailer' => [
+            'driver' => 'session',
+            'provider' => 'retailers',
+        ],
+        'shopkeeper' => [
+            'driver' => 'session',
+            'provider' => 'shopkeepers',
+        ],
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customers',
         ],
 
 
@@ -75,9 +95,29 @@ return [
             'driver' => 'eloquent',
             'model' => \App\Models\User::class,
         ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Admin::class,
+        ],
+        'superadmins' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\SuperAdmin::class,
+        ],
         'wholesellers' => [
             'driver' => 'eloquent',
             'model' => \App\Models\Wholeseller::class,
+        ],
+        'retailers' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Retailer::class,
+        ],
+        'shopkeepers' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Shopkeeper::class,
+        ],
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Customer::class,
         ],
 
         // 'users' => [
@@ -108,8 +148,39 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'superadmins' => [
+            'provider' => 'superadmins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
         'wholesellers' => [
             'provider' => 'wholesellers',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'retailers' => [
+            'provider' => 'retailers',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'shopkeepers' => [
+            'provider' => 'shopkeepers',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'customers' => [
+            'provider' => 'customers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
