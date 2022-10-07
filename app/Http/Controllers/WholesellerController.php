@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Models\GeneralSetting;
+use App\Models\Wholeseller;
 
 class WholesellerController extends Controller
 {
@@ -34,6 +35,13 @@ public function logout()
 {
 Auth::guard('wholeseller')->logout();
 return redirect()->route('login');
+}
+
+// show all wholesellers
+public function index()
+{
+$wholesellers=Wholeseller::all();
+return view('wholeseller.wholeseller.wholeseller_index')->with(['wholesellers'=>$wholesellers]);
 }
 
 // Return view for add new wholeseller

@@ -30,7 +30,7 @@
             <div class="card-header">
                 <h3 class="card-title">{{ __('Add a new Wholeseller') }}</h3>
                 <div class="card-tools">
-                    <a href="" class="btn btn-block btn-primary">
+                    <a href="{{route('wholeseller.index')}}" class="btn btn-block btn-primary">
                         <i class="fas fa-long-arrow-alt-left"></i> {{ __('Go Back') }}
                     </a>
                 </div>
