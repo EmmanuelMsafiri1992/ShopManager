@@ -80,7 +80,7 @@
                     </ul>
                 </li>
                 <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-chart-bar"></i>
                         <p>
                             {{ __('Wholesellers') }}
@@ -96,7 +96,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href=""
+                            <a href="{{route('wholeseller.create')}}"
                                 class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th-list"></i>
                                 <p>{{ __('Add Wholeseller') }}</p>

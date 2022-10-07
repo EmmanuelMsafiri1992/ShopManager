@@ -84,6 +84,12 @@ Route::get('/dashboard',[SuperAdminController::class,'index'])
 ->name('superadmin.dashboard');
 Route::post('/logout',[SuperAdminController::class,'logout'])
 ->name('superadmin.logout');
+// create new wholeseller 
+Route::get('wholeseller/index',[WholesellerController::class,'index'])->name('wholeseller.index');
+Route::get('wholeseller/create',[WholesellerController::class,'create'])->name('wholeseller.create');
+Route::post('wholeseller/store',[WholesellerController::class,'store'])->name('wholeseller.store');
+Route::put('wholeseller/update/{id}',[WholesellerController::class,'update'])->name('wholeseller.update');
+Route::get('wholeseller/delete/{id}',[WholesellerController::class,'destroy'])->name('wholeseller.delete');
 });
 });
 
@@ -116,7 +122,7 @@ Route::post('/login',[WholesellerController::class, 'authenticate'])
 });
 // After wholeseller is authenticated
 Route::group(['middleware' => 'wholeseller.auth'], function(){
-Route::get('/dashboard',[WholesellerController::class,'index'])->name('wholeseller.dashboard');
+Route::get('/dashboard',[WholesellerController::class,'dashboard'])->name('wholeseller.dashboard');
 Route::post('/logout',[WholesellerController::class,'logout'])->name('wholeseller.logout');
 });
 });

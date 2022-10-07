@@ -1,9 +1,22 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Validator;
+use App\Charts\ExpenseChart;
+use App\Charts\FinishedQtyChart;
+use App\Charts\PurchaseChart;
+use App\Charts\TransferredQtyChart;
+use App\Models\Category;
+use App\Models\Expense;
+use App\Models\FinishedProduct;
 use App\Models\GeneralSetting;
+use App\Models\ProcessingProduct;
+use App\Models\Purchase;
+use App\Models\Staff;
+use App\Models\SubCategory;
+use App\Models\Supplier;
+use App\Models\TransferredProduct;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -35,4 +48,5 @@ public function logout()
 Auth::guard('admin')->logout();
 return redirect()->route('login');
 }
+
 }

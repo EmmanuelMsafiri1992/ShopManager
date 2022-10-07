@@ -8,7 +8,7 @@ use App\Models\GeneralSetting;
 class WholesellerController extends Controller
 {
 // Return wholeseller dashboard
-public function index()
+public function dashboard()
 {
 return view('wholeseller.dashboard');
 }
@@ -34,5 +34,31 @@ public function logout()
 {
 Auth::guard('wholeseller')->logout();
 return redirect()->route('login');
+}
+
+// Return view for add new wholeseller
+public function create()
+{
+return view('wholeseller.wholeseller.wholeseller_create');
+}
+// Add new wholeseller
+public function add(Request $request)
+{
+
+}
+// edit a wholeseller
+public function edit($id)
+{
+
+}
+// update a wholeseller
+public function update(Request $request, $id)
+{
+
+}
+// delete a wholeseller
+public function destroy($id)
+{
+
 }
 }
