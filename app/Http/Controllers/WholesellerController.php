@@ -8,6 +8,7 @@ use App\Models\Wholeseller;
 
 class WholesellerController extends Controller
 {
+
 // Return wholeseller dashboard
 public function dashboard()
 {
@@ -38,10 +39,19 @@ return redirect()->route('login');
 }
 
 // show all wholesellers
-public function index()
+public function index(Request $request)
 {
-$wholesellers=Wholeseller::all();
-return view('wholeseller.wholeseller.wholeseller_index')->with(['wholesellers'=>$wholesellers]);
+$query = Wholeseller::query();
+if (request('term')) {
+$term = request('term');
+$query->where('name', 'Like', '%' . $term . '%')
+->orWhere('email', 'Like', '%' . $term . '%')
+->orWhere('phone_number', 'Like', '%' . $term . '%')
+->orWhere('company_name', 'Like', '%' . $term . '%')
+->orWhere('designation', 'Like', '%' . $term . '%');
+}
+$wholesellers = $query->orderBy('id', 'DESC')->paginate(15);
+return view('wholeseller.wholeseller.wholeseller_index', compact('wholesellers'));
 }
 
 // Return view for add new wholeseller

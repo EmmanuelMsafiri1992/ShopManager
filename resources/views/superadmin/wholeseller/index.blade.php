@@ -1,5 +1,4 @@
 @extends('layouts.admin')
-
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header mb-4">
@@ -23,11 +22,11 @@
     <div class="content">
         <div class="container-fluid">
             <div class="col-md-12">
-        <!-- we will include admin.alert here-->
-        </div>
+                @include('layouts.components.alert')
+            </div>
             <div class="row">
                 <div class="col-lg-3 col-md-5 col-6 mb-2">
-                    <form action="" method="GET" role="search">
+                    <form action="{{ route('superadmin.wholeseller.index') }}" method="GET" role="search">
                         <div class="input-group">
                             <input type="text" name="term"
                                 placeholder="{{ __('Type name or email or company or desigantion ...') }}"
@@ -44,8 +43,8 @@
                         <a class="btn btn-secondary" href="">
                             <i class="fas fa-download"></i> @lang('Export')
                         </a>
-                        <a href="" class="btn btn-primary">
-                            {{ __('Add Wholeseller') }} <i class="fas fa-plus-circle"></i>
+                        <a href="{{ route('superadmin.wholeseller.create') }}" class="btn btn-primary">
+                            {{ __('Add wholeseller') }} <i class="fas fa-plus-circle"></i>
                         </a>
                     </div>
                 </div>
@@ -68,32 +67,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @if ($wholesellers >= 0)
-                            @foreach ($wholesellers as $key => $Wholeseller)
+                        @if ($wholesellers->total() > 0)
+                            @foreach ($wholesellers as $key => $wholeseller)
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>
-                                        @if (!empty($Wholeseller->profile_picture))
-                                            <img src="{{ $Wholeseller->profilePic() }}" class="table-image-preview">
-                                        @else
-                                            <div class="no-preview"></div>
-                                        @endif
+                                    <img src="{{asset($wholeseller->profile_picture)}}" class="table-image-preview">
                                     </td>
                                     <td><a
-                                            href="">{{ $Wholeseller->name }}</a>
+                                            href="{{ route('superadmin.wholeseller.edit', $wholeseller->id) }}">{{ $wholeseller->name }}</a>
                                     </td>
-                                    <td>{{ $Wholeseller->email }} </td>
-                                    <td>{{ $Wholeseller->phone_number }} </td>
-                                    <td>{{ $Wholeseller->company_name }} </td>
-                                    <td>{{ $Wholeseller->designation }} </td>
+                                    <td>{{ $wholeseller->email }} </td>
+                                    <td>{{ $wholeseller->phone_number }} </td>
+                                    <td>{{ $wholeseller->company_name }} </td>
+                                    <td>{{ $wholeseller->designation }} </td>
                                     <td>
-                                        @if ($Wholeseller->isActive())
+                                        @if ($wholeseller->isActive())
                                             <span class="badge badge-success">{{ __('Active') }}</span>
                                         @else
                                             <span class="badge badge-warning">{{ __('Inactive') }}</span>
                                         @endif
                                     </td>
-                                    <td>{{ \Carbon\Carbon::parse($Wholeseller->created_at)->format('d-M-Y') }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($wholeseller->created_at)->format('d-M-Y') }}</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button"
@@ -102,24 +97,24 @@
                                                 <i class="fas fa-ellipsis-v"></i>
                                             </button>
                                             <div class="dropdown-menu dropdown-menu-right">
-                                                @if ($Wholeseller->isActive())
-                                                    <a href=""
+                                                @if ($wholeseller->isActive())
+                                                    <a href="{{ route('superadmin.wholeseller.status', $wholeseller->id) }}"
                                                         class="dropdown-item"><i class="fas fa-window-close"></i>
                                                         {{ __('Inactive') }}</a>
                                                 @else
-                                                    <a href="{{ route('Wholesellers.status', $Wholeseller->id) }}"
+                                                    <a href="{{ route('superadmin.wholeseller.status', $wholeseller->id) }}"
                                                         class="dropdown-item"><i class="fas fa-check-square"></i>
                                                         {{ __('Active') }}</a>
                                                 @endif
-                                                <a href="{{ route('Wholesellers.show', $Wholeseller->id) }}"
+                                                <a href="{{ route('superadmin.wholeseller.show', $wholeseller->id) }}"
                                                     class="dropdown-item"><i class="fas fa-eye"></i>
                                                     {{ __('View') }}</a>
-                                                <a href="{{ route('Wholesellers.edit', $Wholeseller->id) }}"
+                                                <a href="{{ route('superadmin.wholeseller.edit', $wholeseller->id) }}"
                                                     class="dropdown-item"><i class="fas fa-edit"></i>
                                                     {{ __('Edit') }}</a>
-                                                <a href="{{ route('Wholesellers.delete', $Wholeseller->id) }}"
+                                                <a href="{{ route('superadmin.wholeseller.delete', $wholeseller->id) }}"
                                                     class="dropdown-item delete-btn"
-                                                    data-msg="{{ __('Are you sure you want to delete this Wholeseller?') }}"><i
+                                                    data-msg="{{ __('Are you sure you want to delete this wholeseller?') }}"><i
                                                         class="fas fa-trash"></i> {{ __('Delete') }}</a>
                                             </div>
                                         </div>
@@ -131,9 +126,9 @@
                                 <td colspan="10">
                                     <div class="data_empty">
                                         <img src="{{ asset('img/result-not-found.svg') }}" alt="" title="">
-                                        <p>{{ __('Sorry, no Wholeseller found in the database. Create your very first Wholeseller.') }}</p>
-                                        <a href="{{ route('Wholesellers.create') }}" class="btn btn-primary">
-                                            {{ __('Add Wholeseller') }} <i class="fas fa-plus-circle"></i>
+                                        <p>{{ __('Sorry, no wholeseller found in the database. Create your very first wholeseller.') }}</p>
+                                        <a href="{{ route('wholesellers.create') }}" class="btn btn-primary">
+                                            {{ __('Add wholeseller') }} <i class="fas fa-plus-circle"></i>
                                         </a>
                                     </div>
                                 </td>
@@ -145,11 +140,9 @@
             <!-- /.card-body -->
 
             <!-- pagination start -->
-            {{ $Wholesellers->links() }}
+            {{ $wholesellers->links() }}
             <!-- pagination end -->
         </div>
     </div>
     <!-- /.content -->
-@endsection
-
 @endsection

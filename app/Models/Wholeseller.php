@@ -19,9 +19,12 @@ protected $casts = [
 public function profilePic()
 {
     if (!empty($this->profile_picture)) {
-        return asset('img/profile/' . $this->profile_picture);
+        return asset('storage/public/images/' . $this->profile_picture);
     }
     return asset('img/boy.png');
 }
-
+public function isActive()
+{
+    return $this->status == 1 ? true : false;
+}
 }

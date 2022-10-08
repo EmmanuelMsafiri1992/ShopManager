@@ -30,56 +30,6 @@
                     </a>
                 </li>
                 <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-bar"></i>
-                        <p>
-                            {{ __('Users') }}
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview ">
-                        <li class="nav-item">
-                            <a href="{{route('users.index')}}"
-                                class="nav-link {{ request()->is('admin/users*') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-users-cog"></i>
-                                <p>{{ __('View Users') }}</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('users.create')}}"
-                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-th-list"></i>
-                                <p>{{ __('Add User') }}</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-chart-bar"></i>
-                        <p>
-                            {{ __('Roles') }}
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview ">
-                        <li class="nav-item">
-                            <a href=""
-                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-tools"></i>
-                                <p>{{ __('View Roles') }}</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href=""
-                                class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-th-list"></i>
-                                <p>{{ __('Add Role') }}</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li  class="nav-item has-treeview {{ request()->is('admin/processing-report') ? 'menu-open' : '' }} {{ request()->is('admin/finished-report') ? 'menu-open' : '' }} {{ request()->is('admin/transferred-report') ? 'menu-open' : '' }}">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-chart-bar"></i>
                         <p>
@@ -89,14 +39,14 @@
                     </a>
                     <ul class="nav nav-treeview ">
                         <li class="nav-item">
-                            <a href=""
-                                class="nav-link {{ request()->is('admin/processing-report') ? 'active' : '' }}">
+                            <a href="{{route('superadmin.wholeseller.index')}}"
+                                class="nav-link {{ request()->is('wholeseller/index') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-tools"></i>
                                 <p>{{ __('View Wholesellers') }}</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('wholeseller.create')}}"
+                            <a href="{{route('superadmin.wholeseller.create')}}"
                                 class="nav-link {{ request()->is('admin/finished-report') ? 'active' : '' }}">
                                 <i class="nav-icon fas fa-th-list"></i>
                                 <p>{{ __('Add Wholeseller') }}</p>
@@ -254,8 +204,6 @@
                         </li>
                     </ul>
                 </li>
-
-                <li class="nav-header text-bold">{{ __('ACCOUNT') }}</li>
                 <li class="nav-item">
                     <form method="post" action="{{route('superadmin.logout')}}">
                     @csrf
@@ -264,33 +212,6 @@
                     </button>
                     </form>
                   </li>
-                <li class="nav-item has-treeview {{ request()->is('admin/profile') ? 'menu-open' : '' }}">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
-                        <p>
-                            {{ ucfirst(auth()->user()->name) }}
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview ">
-                        <li class="nav-item">
-                            <a href="{{ route('admin.profile') }}"
-                                class="nav-link {{ request()->is('admin/profile') ? 'active' : '' }}">
-                                <i class="nav-icon fas fa-user-circle"></i>
-                                <p>{{ __('Profile') }}</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link admin-logout" href="{{ route('logout') }}">
-                                <i class="nav-icon fas fa-power-off"></i> {{ __('Logout') }}
-                            </a>
-                            <form id="sidebar-logout-form" action="{{ route('logout') }}" method="POST"
-                                class="no-display logout-form">
-                                @csrf
-                            </form>
-                        </li>
-                    </ul>
-                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

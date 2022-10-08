@@ -1,8 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-@extends('layouts.admin')
-
-@section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header mb-4">
         <div class="row align-items-center">
@@ -30,14 +27,14 @@
             <div class="card-header">
                 <h3 class="card-title">{{ __('Add a new Wholeseller') }}</h3>
                 <div class="card-tools">
-                    <a href="{{route('wholeseller.index')}}" class="btn btn-block btn-primary">
+                    <a href="{{route('superadmin.wholeseller.index')}}" class="btn btn-block btn-primary">
                         <i class="fas fa-long-arrow-alt-left"></i> {{ __('Go Back') }}
                     </a>
                 </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body p-0">
-                <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{route('superadmin.wholeseller.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="row">
@@ -139,7 +136,4 @@
         </div>
     </div>
     <!-- /.content -->
-@endsection
-
-
 @endsection

@@ -9,17 +9,7 @@ use App\Http\Controllers\WholesellerController;
 use App\Http\Controllers\RetailerController;
 use App\Http\Controllers\ShopkeeperController;
 use App\Http\Controllers\CustomerController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\Superadmin\WholesellerController as SuperadminWholesellerController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -85,11 +75,14 @@ Route::get('/dashboard',[SuperAdminController::class,'index'])
 Route::post('/logout',[SuperAdminController::class,'logout'])
 ->name('superadmin.logout');
 // create new wholeseller 
-Route::get('wholeseller/index',[WholesellerController::class,'index'])->name('wholeseller.index');
-Route::get('wholeseller/create',[WholesellerController::class,'create'])->name('wholeseller.create');
-Route::post('wholeseller/store',[WholesellerController::class,'store'])->name('wholeseller.store');
-Route::put('wholeseller/update/{id}',[WholesellerController::class,'update'])->name('wholeseller.update');
-Route::get('wholeseller/delete/{id}',[WholesellerController::class,'destroy'])->name('wholeseller.delete');
+Route::get('wholeseller/index',[SuperadminWholesellerController::class,'index'])->name('superadmin.wholeseller.index');
+Route::get('superadmin/wholeseller/create',[SuperadminWholesellerController::class,'create'])->name('superadmin.wholeseller.create');
+Route::post('superadmin/wholeseller/store',[SuperadminWholesellerController::class,'store'])->name('superadmin.wholeseller.store');
+Route::get('superadmin/wholeseller/edit/{id}',[SuperadminWholesellerController::class,'edit'])->name('superadmin.wholeseller.edit');
+Route::put('superadmin/wholeseller/update/{id}',[SuperadminWholesellerController::class,'update'])->name('superadmin.wholeseller.update');
+Route::get('superadmin/wholeseller/delete/{id}',[SuperadminWholesellerController::class,'destroy'])->name('superadmin.wholeseller.delete');
+Route::get('superadmin/wholeseller/show/{id}',[SuperadminWholesellerController::class,'show'])->name('superadmin.wholeseller.show');
+Route::get('superadmin/wholeseller/status/{id}',[SuperadminWholesellerController::class,'status'])->name('superadmin.wholeseller.status');
 });
 });
 
