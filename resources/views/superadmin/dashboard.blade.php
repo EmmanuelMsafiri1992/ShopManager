@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('content')
-{{--   Content Header (Page header) --}}
+    {{--   Content Header (Page header) --}}
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -17,45 +17,10 @@
     </div>
     {{--  end content-header --}}
     {{-- Main content --}}
-<div class="content">
-<div class="container-fluid">
+    <div class="content">
+        <div class="container-fluid">
+            @if($stats->staff > 0 && $stats->suppliers > 0 && $stats->categories > 0 && $stats->subCats > 0 && $stats->purchases > 0)
 
-
-</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@endsection
+            @endif
+        </div>
+    </div>
