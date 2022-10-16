@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="description"
-        content="{{ __('Productify is a production management system build to simplify production or manufacturing process. Productify is lightweight, secure and fast and based on laravel.') }}">
+          content="{{ __('Productify is a production management system build to simplify production or manufacturing process. Productify is lightweight, secure and fast and based on laravel.') }}">
     <meta name="keywords"
-        content="{{ __('Productify, Production management system, Manufacturing system, Inventory system, Stock management, Workshop management, Row material management, Garments System, Food and Beverage, Furniture Companies') }}">
+          content="{{ __('Productify, Production management system, Manufacturing system, Inventory system, Stock management, Workshop management, Row material management, Garments System, Food and Beverage, Furniture Companies') }}">
     <meta name="author" content="{{ __('Codeshaper') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -28,59 +27,60 @@
     @yield('extra-style')
 </head>
 
-<body class="hold-transition sidebar-mini 
+<body class="hold-transition sidebar-mini
       @if (session('isDark')) dark-mode @endif
       @if (session('isNavFixed')) layout-navbar-fixed @endif
       @if (session('isSidebarCollapsed')) sidebar-collapse @endif
       @if (session('isSidebarFixed')) layout-fixed @endif"
-      >
-    <div class="wrapper" id="app">
-        <!-- Navbar -->
-        @include('layouts.components.topnavbar')
-        <!-- /.navbar -->
+>
+<div class="wrapper" id="app">
+    <!-- Navbar -->
+    @include('layouts.components.topnavbar')
+    <!-- /.navbar -->
 
-        <!-- Main Sidebar Container -->
-        @if(Auth::guard('superadmin')->check())
+    <!-- Main Sidebar Container -->
+    @if(Auth::guard('superadmin')->check())
         @include('layouts.components.sidebar_superadmin')
 
-        @elseif(Auth::guard('admin')->check())
+    @elseif(Auth::guard('admin')->check())
         @include('layouts.components.sidebar_admin')
 
-        @elseif(Auth::guard('wholeseller')->check())
+    @elseif(Auth::guard('wholeseller')->check())
         @include('layouts.components.sidebar_wholeseller')
 
-        @elseif (Auth::guard('retailer')->check())
+    @elseif (Auth::guard('retailer')->check())
         @include('layouts.components.sidebar_retailer')
 
-        @elseif (Auth::guard('shopkeeper')->check())
+    @elseif (Auth::guard('shopkeeper')->check())
         @include('layouts.components.sidebar_shopkeeper')
 
-        @elseif (Auth::guard('customer')->check())
+    @elseif (Auth::guard('customer')->check())
         @include('layouts.components.sidebar_customer')
-        @endif
-        <!-- /.Main Sidebar Container -->
+    @endif
+    <!-- /.Main Sidebar Container -->
 
-        <!-- page content -->
-        <div class="content-wrapper">
-            @yield('content')
-        </div>
-        <!-- /.page content-->
+    <!-- page content -->
+    <div class="content-wrapper">
+        @yield('content')
 
-        <!-- Main Footer -->
-        @include('layouts.components.footer')
-        <!--/. Main Footer -->
     </div>
-    <!-- ./wrapper -->
+    <!-- /.page content-->
+
+    <!-- Main Footer -->
+    @include('layouts.components.footer')
+    <!--/. Main Footer -->
+</div>
+<!-- ./wrapper -->
 
 
-    @include('layouts.components.sidebar_settings')
+@include('layouts.components.sidebar_settings')
 
-    <!-- REQUIRED SCRIPTS -->
-    <script src="{{ asset('js/app.js') }} "></script>
-    <script src="{{ asset('js/main.js') }} "></script>
-    <script src="{{ asset('js/sidebar_control.js') }} "></script>
-    @yield('extra-script')
-    <!-- Language script -->
+<!-- REQUIRED SCRIPTS -->
+<script src="{{ asset('js/app.js') }} "></script>
+<script src="{{ asset('js/main.js') }} "></script>
+<script src="{{ asset('js/sidebar_control.js') }} "></script>
+@yield('extra-script')
+<!-- Language script -->
 
 </body>
 
