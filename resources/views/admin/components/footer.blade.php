@@ -1,5 +1,5 @@
 <footer class="main-footer">
     <strong>
-        {{ $settings['copyright'] ?? '' }} {{ __('Created by') }} <a href="https://codeshaper.net/" target="_blank"><i class="fas fa-heart red"></i> CODESHAPER</a>
+        {{ $settings['copyright'] ?? '' }} {{ __('Developed by') }} <a href="" target="_blank">Riverine Technologies</a>
     </strong>
 </footer>

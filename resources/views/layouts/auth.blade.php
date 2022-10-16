@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="description" content="{{ __('Productify is a production management system build to simplify production or manufacturing process. Productify is lightweight, secure and fast and based on laravel.') }}">
         <meta name="keywords" content="{{ __('Productify,Production management system,Manufacturing system, Inventory system, Stock management, Workshop management, Row material management') }}">
-        <meta name="author" content="{{ __('Codeshaper') }}">
+        <meta name="author" content="{{ __('Riverine Technologies') }}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <!-- CSRF Token -->

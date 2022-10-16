@@ -19,8 +19,98 @@
     {{-- Main content --}}
     <div class="content">
         <div class="container-fluid">
-            @if($stats->staff > 0 && $stats->suppliers > 0 && $stats->categories > 0 && $stats->subCats > 0 && $stats->purchases > 0)
+           <div class="row">
+                <div class="col-12 col-sm-6 col-md-3 stats">
+                    <a href="">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Stock</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 stats">
+                    <a href="">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Sales</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 stats">
+                    <a href="">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Debtors</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 stats">
+                    <a href="">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Daily</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 stats">
+                    <a href="">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Alerts</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 stats">
+                    <a href="">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Analytics</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 stats">
+                    <a href="">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Admin</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 stats">
+                    <a href="">
+                        <div class="info-box">
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-tags"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text">Expenses</span>
+                                <span class="info-box-number">0</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
 
-            @endif
         </div>
     </div>
+    </div>
+    {{--  end main content --}}
+@endsection

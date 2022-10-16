@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="description"
           content="{{ __('Productify is a production management system build to simplify production or manufacturing process. Productify is lightweight, secure and fast and based on laravel.') }}">
     <meta name="keywords"
           content="{{ __('Productify, Production management system, Manufacturing system, Inventory system, Stock management, Workshop management, Row material management, Garments System, Food and Beverage, Furniture Companies') }}">
-    <meta name="author" content="{{ __('Codeshaper') }}">
+    <meta name="author" content="{{ __('Riverine') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <!-- CSRF Token -->
@@ -37,7 +38,6 @@
     <!-- Navbar -->
     @include('layouts.components.topnavbar')
     <!-- /.navbar -->
-
     <!-- Main Sidebar Container -->
     @if(Auth::guard('superadmin')->check())
         @include('layouts.components.sidebar_superadmin')
