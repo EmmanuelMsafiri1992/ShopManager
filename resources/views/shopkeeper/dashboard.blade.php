@@ -114,3 +114,22 @@
     </div>
     {{--  end main content --}}
 @endsection
+@section('extra-script')
+    {{-- ChartScript --}}
+    <script src="{{ asset('js/Chart.min.js') }}" charset=utf-8></script>
+    @if($purchasesChart)
+        {!! $purchasesChart->script() !!}
+    @endif
+
+    @if($finishedQtyChart)
+        {!! $finishedQtyChart->script() !!}
+    @endif
+
+    @if($transferredQtyChart)
+        {!! $transferredQtyChart->script() !!}
+    @endif
+
+    @if($expenseChart)
+        {!! $expenseChart->script() !!}
+    @endif
+@endsection

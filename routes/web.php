@@ -84,7 +84,78 @@ Route::group(['prefix' => 'superadmin'], function() {
         Route::get('superadmin/wholeseller/show/{id}',[SuperadminWholesellerController::class,'show'])->name('superadmin.wholeseller.show');
         Route::get('superadmin/wholeseller/status/{id}',[SuperadminWholesellerController::class,'status'])->name('superadmin.wholeseller.status');
     });
+    // categories route
+    Route::get('/categories/pdf', 'CategoryController@createPDF')->name('categories.pdf');
+    Route::resource('categories', 'CategoryController', [
+        'names' => [
+            'index' => 'categories.index',
+            'create' => 'categories.create',
+            'store' => 'categories.store',
+            'edit' => 'categories.edit',
+            'update' => 'categories.update',
+        ]
+    ]);
+    Route::get('categories/{id}/status', 'CategoryController@changeStatus')->name('categories.status');
+    Route::get('categories/{id}/delete', 'CategoryController@destroy')->name('categories.delete');
 });
+// sub categories route
+Route::get('/sub-categories/pdf', 'SubCategoryController@createPDF')->name('subCategories.pdf');
+Route::resource('sub-categories', 'SubCategoryController', [
+    'names' => [
+        'index' => 'subCategories.index',
+        'create' => 'subCategories.create',
+        'store' => 'subCategories.store',
+        'edit' => 'subCategories.edit',
+        'update' => 'subCategories.update',
+    ]
+]);
+// staff routes
+Route::get('/staff/pdf', 'StaffController@createPDF')->name('staff.pdf');
+Route::resource('staff', 'StaffController', [
+    'names' => [
+        'index' => 'staff.index',
+        'create' => 'staff.create',
+        'store' => 'staff.store',
+        'show' => 'staff.show',
+        'edit' => 'staff.edit',
+        'update' => 'staff.update',
+    ]
+]);
+Route::get('staff/{slug}/staus', 'StaffController@changeStatus')->name('staff.status');
+Route::get('staff/{id}/delete', 'StaffController@destroy')->name('staff.delete');
+
+// supplier routes
+Route::get('/suppliers/pdf', 'SupplierController@createPDF')->name('suppliers.pdf');
+Route::resource('suppliers', 'SupplierController', [
+    'names' => [
+        'index' => 'suppliers.index',
+        'create' => 'suppliers.create',
+        'store' => 'suppliers.store',
+        'show' => 'suppliers.show',
+        'edit' => 'suppliers.edit',
+        'update' => 'suppliers.update',
+    ]
+]);
+Route::get('suppliers/{id}/status', 'SupplierController@changeStatus')->name('suppliers.status');
+Route::get('suppliers/{id}/delete', 'SupplierController@destroy')->name('suppliers.delete');
+// purchases route
+Route::get('/purchases/pdf', 'PurchaseController@createPDF')->name('purchases.pdf');
+Route::resource('purchases', 'PurchaseController', [
+    'names' => [
+        'index' => 'purchases.index',
+        'create' => 'purchases.create',
+        'store' => 'purchases.store',
+        'show' => 'purchases.show',
+        'edit' => 'purchases.edit',
+        'update' => 'purchases.update',
+    ]
+]);
+Route::get('purchases/{code}/invoice', 'PurchaseController@getInvoice')->name('purchases.invoice');
+Route::get('purchases/{code}/status', 'PurchaseController@changeStatus')->name('purchases.status');
+Route::post('/purchase-products', 'PurchaseController@purchaseProducts')->name('purchase.purchaseProducts');
+Route::get('purchases/{code}/delete', 'PurchaseController@destroy')->name('purchases.delete');
+
+
 // Route for admins
 Route::group(['prefix' => 'admin'], function() {
 // Before admin is authenticated
