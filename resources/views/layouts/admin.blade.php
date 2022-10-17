@@ -81,7 +81,6 @@
     <script src="{{ asset('js/sidebar_control.js') }} "></script>
     @yield('extra-script')
     <!-- Language script -->
-
 </body>
 
 </html>

@@ -5,7 +5,7 @@
             <h5>Customize AdminLTE</h5>
             <hr class="mb-2">
             <div class="custom-control custom-checkbox mb-4">
-                <input type="checkbox" class="custom-control-input" id="darkmode" name="darkmode" @if (session('isDark')) checked @endif>
+                <input type="checkbox" class="custom-control-input" id="darkmode" name="darkmode" @if(session('isDark')) checked @endif>
                 <label class="custom-control-label" for="darkmode">
                     Dark Mode
                 </label>
@@ -41,8 +41,7 @@
                 <label class="custom-control-label" for="darkSidebar">
                     Dark
                 </label>
-            </div>
-
+                 </div>
         </div>
     </div>
 </aside>
