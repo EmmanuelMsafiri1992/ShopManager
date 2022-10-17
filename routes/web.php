@@ -84,6 +84,111 @@ Route::group(['prefix' => 'superadmin'], function() {
         Route::get('superadmin/wholeseller/show/{id}',[SuperadminWholesellerController::class,'show'])->name('superadmin.wholeseller.show');
         Route::get('superadmin/wholeseller/status/{id}',[SuperadminWholesellerController::class,'status'])->name('superadmin.wholeseller.status');
     });
+    // return purchases route
+    Route::get('/return-purchases/pdf', 'PurchaseReturnController@createPDF')->name('purchaseReturn.pdf');
+    Route::resource('return-purchases', 'PurchaseReturnController', [
+        'names' => [
+            'index' => 'purchaseReturn.index',
+            'create' => 'purchaseReturn.create',
+            'store' => 'purchaseReturn.store',
+            'show' => 'purchaseReturn.show',
+            'edit' => 'purchaseReturn.edit',
+            'update' => 'purchaseReturn.update',
+        ]
+    ]);
+    Route::get('return-purchases/{code}/status', 'PurchaseReturnController@changeStatus')->name('purchaseReturn.status');
+    Route::get('return-purchases/{code}/delete', 'PurchaseReturnController@destroy')->name('purchaseReturn.delete');
+
+    // damage purchases route
+    Route::get('/damage-purchases/pdf', 'PurchaseDamageController@createPDF')->name('purchaseDamage.pdf');
+    Route::resource('damage-purchases', 'PurchaseDamageController', [
+        'names' => [
+            'index' => 'purchaseDamage.index',
+            'create' => 'purchaseDamage.create',
+            'store' => 'purchaseDamage.store',
+            'show' => 'purchaseDamage.show',
+            'edit' => 'purchaseDamage.edit',
+            'update' => 'purchaseDamage.update',
+        ]
+    ]);
+    Route::get('damage-purchases/{code}/status', 'PurchaseDamageController@changeStatus')->name('purchaseDamage.status');
+    Route::get('damage-purchases/{code}/delete', 'PurchaseDamageController@destroy')->name('purchaseDamage.delete');
+
+    // purchase inventory route
+    Route::get('/purchase-inventory/pdf', 'PurchaseInventoryController@createPDF')->name('purchaseInventory.pdf');
+    Route::resource('purchase-inventory', 'PurchaseInventoryController', [
+        'names' => [
+            'index' => 'purchaseInventory.index',
+        ]
+    ]);
+
+    // processing products route
+    Route::get('/processing-products/pdf', 'ProcessingProductController@createPDF')->name('processing.pdf');
+    Route::resource('processing-products', 'ProcessingProductController', [
+        'names' => [
+            'index' => 'processing.index',
+            'create' => 'processing.create',
+            'store' => 'processing.store',
+            'show' => 'processing.show',
+            'edit' => 'processing.edit',
+            'update' => 'processing.update',
+        ]
+    ]);
+    Route::get('processing-products/{slug}/status', 'ProcessingProductController@changeStatus')->name('processing.status');
+    Route::get('processing-products/{slug}/delete', 'ProcessingProductController@destroy')->name('processing.delete');
+
+    // finished products route
+    Route::get('/finished-products/pdf', 'FinishedProductController@createPDF')->name('finished.pdf');
+    Route::post('/sizes', 'FinishedProductController@productSizes')->name('finished.sizes');
+    Route::post('/finished-purchase-products', 'FinishedProductController@finishedPurchaseProducts')->name('finished.purchase.products');
+    Route::resource('finished-products', 'FinishedProductController', [
+        'names' => [
+            'index' => 'finished.index',
+            'create' => 'finished.create',
+            'store' => 'finished.store',
+            'show' => 'finished.show',
+            'edit' => 'finished.edit',
+            'update' => 'finished.update',
+        ]
+    ]);
+    Route::get('finished-products/{id}/status', 'FinishedProductController@changeStatus')->name('finished.status');
+    Route::get('finished-products/{id}/delete', 'FinishedProductController@destroy')->name('finished.delete');
+
+    // transferred products route
+    Route::get('/transferred-products/pdf', 'TransferredProductController@createPDF')->name('transferred.pdf');
+    Route::post('/finished-product-sizes', 'TransferredProductController@finishedProductSizes')->name('transferred.finished.sizes');
+    Route::resource('transferred-products', 'TransferredProductController', [
+        'names' => [
+            'index' => 'transferred.index',
+            'create' => 'transferred.create',
+            'store' => 'transferred.store',
+            'show' => 'transferred.show',
+            'edit' => 'transferred.edit',
+            'update' => 'transferred.update',
+        ]
+    ]);
+    Route::get('transferred-products/{id}/status', 'TransferredProductController@changeStatus')->name('transferred.status');
+    Route::get('transferred-products/{id}/delete', 'TransferredProductController@destroy')->name('transferred.delete');
+
+
+    // purchase report
+    Route::get('purchase-report', 'PurchaseReport@purchaseReport')->name('purchase.report');
+    Route::post('purchase-report', 'PurchaseReport@postPurchaseReport')->name('purchase.report.post');
+
+    // processing report
+    Route::get('processing-report', 'ProductReport@processingReport')->name('processing.report');
+    Route::post('processing-report', 'ProductReport@filterProcessingReport')->name('processing.report.filter');
+
+    // finished report
+    Route::get('finished-report', 'ProductReport@finishedReport')->name('finished.report');
+    Route::post('finished-report', 'ProductReport@filterFinishedReport')->name('finished.report.filter');
+
+    // transferred report
+    Route::get('transferred-report', 'ProductReport@transferredReport')->name('transferred.report');
+    Route::post('transferred-report', 'ProductReport@filterTransferredReport')->name('transferred.report.filter');
+
+    // lang change
+    Route::get('lang/change', [LanguageController::class, 'change'])->name('changeLang');
     // categories route
     Route::get('/categories/pdf', 'CategoryController@createPDF')->name('categories.pdf');
     Route::resource('categories', 'CategoryController', [

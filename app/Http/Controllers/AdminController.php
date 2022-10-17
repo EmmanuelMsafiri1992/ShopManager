@@ -16,6 +16,7 @@ use App\Models\Supplier;
 use App\Models\TransferredProduct;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
