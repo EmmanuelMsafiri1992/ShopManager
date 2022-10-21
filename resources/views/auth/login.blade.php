@@ -54,32 +54,32 @@
                                 </div>
                             </form>
                             <a href="{{url('superadmin/login')}}" class="btn btn-danger">
-                            Become a Super Admin
+                            Login as a Super Admin
                             </a>
                             <br>
                             <br>
                             <a href="{{url('admin/login')}}" class="btn btn-success">
-                            Become an Admin
+                                Login as an Admin
                             </a>
                             <br>
                             <br>
                             <a href="{{url('wholeseller/login')}}" class="btn btn-warning">
-                            Become a wholeseller
+                                Login as a wholeseller
                             </a>
                             <br>
                             <br>
                             <a href="{{url('retailer/login')}}" class="btn btn-danger">
-                            Become a Retailer
+                                Login as a Retailer
                             </a>
                             <br>
                             <br>
                             <a href="{{url('shopkeeper/login')}}" class="btn btn-success">
-                            Become a Shopkeeper
+                                Login as a Shopkeeper
                             </a>
                             <br>
                             <br>
                             <a href="{{url('customer/login')}}" class="btn btn-warning">
-                            Become a Customer
+                                Login as a Customer
                             </a>
                         </div>
                     </div>
