@@ -23,6 +23,10 @@ class WholesellerController extends Controller
 {
 
 // Return wholeseller dashboard
+    public function setUpPage()
+    {
+        return view('wholeseller.setup.index');
+    }
 public function dashboard()
 {
 //return view('wholeseller.dashboard');

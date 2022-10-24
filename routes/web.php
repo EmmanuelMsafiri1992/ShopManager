@@ -291,8 +291,9 @@ Route::group(['prefix' => 'wholeseller'], function() {
         Route::get('/dashboard',[WholesellerController::class,'dashboard'])->name('wholeseller.dashboard');
         Route::post('/logout',[WholesellerController::class,'logout'])->name('wholeseller.logout');
     });
+    // Setup Route
+    Route::get('setup', [WholesellerController::class, 'setUpPage'])->name('wholesaller.setup');
 });
-
 // Route for retailers
 Route::group(['prefix' => 'retailer'], function() {
 // Before retailer is authenticated
@@ -300,14 +301,12 @@ Route::group(['prefix' => 'retailer'], function() {
         Route::view('/login','retailer.auth.login')->name('retailer.login');
         Route::post('/login',[RetailerController::class, 'authenticate'])->name('retailer.auth');
     });
-
 // After retailers is authenticated
     Route::group(['middleware' => 'retailer.auth'], function(){
         Route::get('/dashboard',[RetailerController::class,'index'])->name('retailer.dashboard');
         Route::post('/logout',[RetailerController::class,'logout'])->name('retailer.logout');
     });
 });
-
 // Route for shopkeepers
 Route::group(['prefix' => 'shopkeeper'], function() {
 // Before shopkeeper is authenticated
